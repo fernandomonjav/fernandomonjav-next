@@ -19,7 +19,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      translate: ['group-hover'],
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/line-clamp')],
 }

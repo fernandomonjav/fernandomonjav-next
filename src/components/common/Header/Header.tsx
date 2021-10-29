@@ -2,7 +2,10 @@ import Link from 'next/link'
 import { Container, NavLink } from '~/components/ui'
 
 const Header = () => {
-  const links = [{ id: 'home', name: 'Home', href: '/', exact: true }]
+  const links = [
+    { id: 'home', name: 'Home', href: '/', exact: true },
+    { id: 'projects', name: 'Projects', href: '/projects', exact: false },
+  ]
 
   return (
     <header className="w-full sticky top-0 left-0 z-30 bg-white">
