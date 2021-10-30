@@ -7,6 +7,7 @@ export interface Project {
   description: string
   repositoryUrl: string
   websiteUrl: string
+  content: string
   createdAt: string
   updatedAt: string
 }

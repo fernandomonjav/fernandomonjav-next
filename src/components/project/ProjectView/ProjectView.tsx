@@ -1,4 +1,5 @@
 import { NextSeo } from 'next-seo'
+import ReactMarkdown from 'react-markdown'
 import { CodeIcon, GlobeIcon } from '~/components/icons'
 import { Container } from '~/components/ui'
 import { Project } from '~/types'
@@ -11,7 +12,7 @@ const ProjectView: React.FC<Props> = (props) => {
   const { project } = props
 
   return (
-    <Container size="lg">
+    <Container size="md">
       <NextSeo
         title={project.name}
         description={project.description}
@@ -62,6 +63,12 @@ const ProjectView: React.FC<Props> = (props) => {
           </div>
         )}
       </div>
+
+      {project.content && (
+        <div className="max-w-full pb-12 prose mx-auto">
+          <ReactMarkdown children={project.content} />
+        </div>
+      )}
     </Container>
   )
 }

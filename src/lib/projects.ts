@@ -9,6 +9,7 @@ interface LocaleString {
 type ProjectDoc = Omit<Project, 'id' | 'description' | 'content' | 'createdAt' | 'updatedAt'> & {
   _id: ObjectId
   description: LocaleString
+  content: LocaleString
   createdAt: Date
   updatedAt: Date
 }
@@ -23,6 +24,7 @@ const normalizeProject = (project: ProjectDoc, locale: string): Project => {
     description: project.description[locale],
     repositoryUrl: project.repositoryUrl,
     websiteUrl: project.websiteUrl,
+    content: project.content[locale],
     createdAt: project.createdAt.toISOString(),
     updatedAt: project.updatedAt.toISOString(),
   }

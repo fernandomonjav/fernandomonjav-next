@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .prose p img {
+    @apply mx-auto block rounded-xl;
+  }
+}
+
+body {
+  @apply text-gray-900 bg-white overflow-y-scroll;
+}

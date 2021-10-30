@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app'
-import 'tailwindcss/tailwind.css'
+import '~/styles/main.css'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const getLayout = (Component as any).getLayout || ((page: React.ReactNode) => page)

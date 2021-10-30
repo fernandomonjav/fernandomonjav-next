@@ -13,7 +13,7 @@ class MyDocument extends Document {
           />
           <link rel="icon" href="/static/favicon.png" />
         </Head>
-        <body className="text-gray-900 bg-white overflow-y-scroll">
+        <body>
           <Main />
           <NextScript />
         </body>
