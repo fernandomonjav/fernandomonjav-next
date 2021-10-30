@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo'
 import { CodeIcon, GlobeIcon } from '~/components/icons'
 import { Container } from '~/components/ui'
 import { Project } from '~/types'
@@ -11,6 +12,12 @@ const ProjectView: React.FC<Props> = (props) => {
 
   return (
     <Container size="lg">
+      <NextSeo
+        title={project.name}
+        description={project.description}
+        openGraph={{ images: [{ url: project.coverUrl, alt: project.name }] }}
+      />
+
       <div className="py-12">
         <h1 className="text-4xl md:text-5xl font-bold">{project.name}</h1>
 

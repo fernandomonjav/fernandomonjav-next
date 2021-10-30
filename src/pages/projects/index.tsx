@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next'
+import { NextSeo } from 'next-seo'
 import { getLayout } from '~/components/common'
 import { ProjectCard } from '~/components/project'
 import { Container } from '~/components/ui'
@@ -24,6 +25,11 @@ const ProjectsPage = (props: Props) => {
 
   return (
     <Container>
+      <NextSeo
+        title={`Projects | Fernando Monja Vasquez`}
+        description="Learn about the amazing projects I have worked on."
+      />
+
       <div className="py-12">
         <h1 className="text-4xl md:text-5xl font-bold">Projects</h1>
 

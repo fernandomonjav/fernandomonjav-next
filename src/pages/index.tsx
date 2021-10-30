@@ -29,7 +29,7 @@ const HomePage = (props: Props) => {
 
         <div className="mt-4">
           <p className="text-gray-600 text-lg md:text-xl">
-            Developing technological tools that facilitate the activities performed by people.{' '}
+            Developing technological tools that facilitate the activities performed by people.
           </p>
         </div>
       </div>
