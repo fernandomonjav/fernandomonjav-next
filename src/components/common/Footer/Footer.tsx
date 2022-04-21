@@ -53,17 +53,17 @@ const Footer = () => {
                   href={link.href}
                   rel="noreferrer"
                   target="_blank"
-                  className="group w-12 h-12 bg-gray-100 hover:bg-gray-200 flex justify-center items-center rounded-full transition ease-in-out duration-300"
+                  className="w-12 h-12 flex justify-center items-center transition ease-in-out duration-300"
                   aria-label={link.name}
                 >
-                  <Icon className="w-5 h-5" />
+                  <Icon className="w-6 h-6" />
                 </a>
               ))}
             </div>
           </div>
 
           <div className="mt-6 flex flex-col items-center">
-            <span className="text-gray-600">fernandomonjav © {new Date().getFullYear()}</span>
+            <span>fernandomonjav © {new Date().getFullYear()}</span>
           </div>
         </div>
       </Container>

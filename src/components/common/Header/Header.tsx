@@ -8,28 +8,27 @@ const Header = () => {
   ]
 
   return (
-    <header className="w-full sticky top-0 left-0 z-30 bg-white">
+    <header className="w-full sticky top-0 left-0 z-30 bg-white/75 backdrop-blur-md border-b">
       <Container>
-        <div className="py-4 flex items-center justify-between flex-wrap">
+        <div className="md:h-14 py-2 md:py-auto flex items-center justify-between flex-wrap">
           <Link href="/">
-            <a className="flex mb-4 md:mb-0">
-              <span className="text-xl font-bold">fernandomonjav</span>
+            <a className="flex mb-2 md:mb-0">
+              <span className="text-lg font-bold">fernandomonjav</span>
             </a>
           </Link>
 
           <nav className="w-full md:w-auto nav">
-            <ul className="flex items-center overflow-x-auto">
+            <ul className="space-x-2 flex items-center overflow-x-auto">
               {links.map((link) => (
                 <li key={link.id}>
                   <NavLink
                     href={link.href}
                     exact={link.exact}
-                    activeClassName="bg-gray-100 hover:bg-gray-200"
+                    className="h-9 px-6 flex items-center hover:bg-gray-200 rounded-full transition ease-in-out duration-300"
+                    activeClassName="h-9 px-6 flex items-center text-white bg-black rounded-full transition ease-in-out duration-300"
                     passHref
                   >
-                    <a className="h-10 px-6 hover:bg-gray-100 flex items-center rounded-full">
-                      <span className="font-medium">{link.name}</span>
-                    </a>
+                    <span className="text-sm font-medium">{link.name}</span>
                   </NavLink>
                 </li>
               ))}

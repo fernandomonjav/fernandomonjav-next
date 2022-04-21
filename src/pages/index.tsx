@@ -25,21 +25,21 @@ const HomePage = (props: Props) => {
   return (
     <Container>
       <div className="py-12">
-        <h1 className="text-4xl md:text-5xl font-bold">Hi, I'm Fernando</h1>
+        <h1 className="text-2xl font-bold">Hi, I'm Fernando</h1>
 
-        <div className="mt-4">
-          <p className="text-gray-600 text-lg md:text-xl">
+        <div className="mt-2">
+          <p className="text-lg">
             Developing technological tools that facilitate the activities performed by people.
           </p>
         </div>
       </div>
 
       <div>
-        <h1 className="text-3xl font-bold">Latest projects</h1>
+        <h2 className="text-xl font-bold">Latest projects</h2>
       </div>
 
-      <div className="py-12">
-        <div className="grid gap-y-12 gap-x-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="py-6">
+        <div className="grid gap-y-8 gap-x-4 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}

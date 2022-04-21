@@ -9,7 +9,7 @@ const Container: React.FC<ContainerProps> = (props) => {
   const { size = 'xl', children, ...rest } = props
 
   return (
-    <div className={cx('mx-auto px-4', MAX_W_SCREEEN[size])} {...rest}>
+    <div className={cx('mx-auto px-4 container', MAX_W_SCREEEN[size])} {...rest}>
       {children}
     </div>
   )
