@@ -1,26 +1,53 @@
-import { Children, cloneElement } from 'react'
 import { useRouter } from 'next/router'
 import Link, { LinkProps } from 'next/link'
 import cx from 'classnames'
 
-export interface NavLinkProps extends LinkProps {
+export type NavLinkProps = {
   exact?: boolean
   activeClassName?: string
-}
+} & React.AnchorHTMLAttributes<HTMLAnchorElement> &
+  LinkProps
 
 const NavLink: React.FC<NavLinkProps> = (props) => {
-  const { exact, activeClassName, children, ...rest } = props
+  const {
+    href,
+    as,
+    locale,
+    passHref,
+    replace,
+    scroll,
+    shallow,
+
+    exact,
+    activeClassName,
+
+    className,
+    children,
+
+    ...rest
+  } = props
+
   const { asPath } = useRouter()
-  const child = Children.only(children) as React.ReactElement
-  const childClassName = child.props.className || ''
 
-  const href = rest.href.toString()
+  const active = exact ? asPath === href.toString() : asPath.includes(href.toString())
 
-  const active = exact ? asPath === href : asPath.includes(href)
+  const rootClassName = active ? cx(activeClassName) : cx(className)
 
-  const className = active ? cx(childClassName, activeClassName) : cx(childClassName)
-
-  return <Link {...rest}>{cloneElement(child, { className })}</Link>
+  return (
+    <Link
+      href={href}
+      as={as}
+      locale={locale}
+      passHref={passHref}
+      replace={replace}
+      scroll={scroll}
+      shallow={shallow}
+    >
+      <a className={rootClassName} {...rest}>
+        {children}
+      </a>
+    </Link>
+  )
 }
 
 export default NavLink
