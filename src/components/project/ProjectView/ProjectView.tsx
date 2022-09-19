@@ -55,6 +55,12 @@ const ProjectView: React.FC<Props> = (props) => {
             )}
           </div>
         )}
+
+        {project.coverUrl && (
+          <div className="mt-6 aspect-w-16 aspect-h-9 rounded-md overflow-hidden">
+            <img src={project.coverUrl} alt={project.name} className="w-full h-full object-cover" />
+          </div>
+        )}
       </div>
 
       <div className="mb-6 border-b"></div>
